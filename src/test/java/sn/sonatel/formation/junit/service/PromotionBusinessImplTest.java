@@ -9,6 +9,7 @@ import static org.junit.Assert.*;
 /**
  * Created by ext_sow18 on 03/01/2018.
  */
+
 public class PromotionBusinessImplTest {
 
     static PromotionBusiness promotionBusiness ;

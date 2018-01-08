@@ -15,7 +15,10 @@ public class PromotionBusinessImpl implements PromotionBusiness {
 
     public Double appliquerRemisePromotionnelleSurPrix(Double prix, String nomProduit) {
 
+        // verifier quelques regles metier
+
         double promo = promoCalculatorService.calculate(nomProduit, prix);
+        //retourner le prix après application des règles
         return prix  - (prix * promo);
     }
 
