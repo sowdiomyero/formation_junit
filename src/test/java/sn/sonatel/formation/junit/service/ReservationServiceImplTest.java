@@ -1,6 +1,7 @@
 package sn.sonatel.formation.junit.service;
 
 import org.junit.Test;
+import org.mockito.Matchers;
 import sn.sonatel.formation.junit.exceptions.ReservationNameCannotBeNullException;
 import sn.sonatel.formation.junit.exceptions.ReservationNameMustBeUniqueException;
 import sn.sonatel.formation.junit.exceptions.ReservationNotFoundException;
@@ -11,8 +12,7 @@ import java.util.Date;
 import java.util.UUID;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 import static sn.sonatel.formation.junit.model.Reservation.STATUT.RESERVED;
 
 /**
@@ -31,6 +31,7 @@ public class ReservationServiceImplTest {
         Reservation rv1 = new Reservation(UUID.randomUUID().toString(),"RV1", "Diom", new Date(), Reservation.STATUT.PENDING);
         Reservation reservation = service.reserver(rv1);
         assertEquals(RESERVED, reservation.getStatut() );
+        verify(repo, times(1)).create(any(Reservation.class));
     }
 
 
