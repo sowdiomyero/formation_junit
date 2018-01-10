@@ -20,6 +20,7 @@
 		String:nom
 		enum:statut (PENDING, ACCEPTED, PAYED, REJECTED, CANCELED)
 		String:auteur		Date:dateReservation
+		
 	* Une reservation doit posseder un nom unique ReservationNameMustBeUniqueException
 	* Une reservation doit obligatoirement posseder un nom ReservationNameCannotBeNullException
 	* On ne peut pas mettre à jour une reservation qui n'existe pas. Jeter une exception ReservationNotExistException

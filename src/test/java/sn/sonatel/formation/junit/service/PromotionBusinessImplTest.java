@@ -4,7 +4,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 /**
  * Created by ext_sow18 on 03/01/2018.
